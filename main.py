@@ -10,7 +10,7 @@ if option == 1:
     information = list(filter(lambda item: item['Country/Territory'] == country,data))[0]
     result = utils.filter_years(information)
     labels,values = utils.get_labels_values(result)
-    charts.generate_bar_chart(labels,values)
+    charts.generate_bar_chart(country.lower(),labels,values)
 else:
     result = {item['Country/Territory']:item['World Population Percentage'] for item in data}
     labels,values = utils.get_labels_values(result)
